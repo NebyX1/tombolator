@@ -1,0 +1,44 @@
+{% extends 'layout.html' %} {% block content %}
+
+<div class="text-center mt-5 mb-5">
+<h1>Panel de Administrador</h1>
+<p class="mt-3">Aquí se puede subir el archivo JSON para alimentar la base de datos o directamente modificar los datos desde el bloque inferior.</p>
+</div>
+
+<div class="text-center">
+  <form
+    action="{{ url_for('subir_sorteo') }}"
+    method="post"
+    enctype="multipart/form-data"
+  >
+    <div class="mb-5">
+      <label for="subir-json" class="form-label"
+        >Subir archivo JSON de sorteos</label
+      >
+      <input
+        class="form-control"
+        type="file"
+        id="subir-json"
+        name="archivo_json"
+      />
+    </div>
+    <div class="mb-5">
+      <button type="submit" class="btn btn-primary mb-3 rounded-5">Subir</button>
+    </div>
+  </form>
+</div>
+
+<div class="text-center mb-5">
+    <form method="POST" action="{{ url_for('modificar_sorteos') }}">
+        <div class="mb-5 p-3">
+          <label for="obtenerSorteos" class="form-label">Puedes Agregar o Modificar los sorteos</label>
+          <textarea class="form-control" aria-label="With textarea" id="obtenerSorteos" name="sorteos_modificados">{{ sorteos_string }}</textarea>
+        </div>
+        <div id="obtenerSorteosHelp" class="form-text">
+          <p class="text-white">Presiona el botón "Modificar Sorteos" para guardar los cambios.</p>
+        </div>
+        <button type="submit" class="btn btn-primary rounded-5">Modificar Sorteos</button>
+      </form>
+</div>
+
+{% endblock %}

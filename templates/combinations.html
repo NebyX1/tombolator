@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+
+{% block content %}
+
+
+<div class="text-center mt-5 mb-5 p-3">
+  <h1>Analizador de combinaciones</h1>
+  <p class="mt-3">A continuación se le presenta a usted un analizador de combinaciones de algunos de los sorteos de tómbola uruguaya reales.
+    Lo que hace nuestro algoritmo, es mediante una serie de combinaciones, analizar cuantas veces se repiten por ejemplo, combinaciones de 3, 4, hasta 7 números,
+    a lo largo de los sorteos disponibles en nuestra base de datos, los cuales son consecutivos en términos de fechas.
+    Ahora, cabe hacer una aclaración, a pesar de que las frecuencias que se muestran si usted presiona el botón "Ver Números!" son reales,
+    nosotros no aseguramos, ni aconsejamos bajo ningún concepto a que alguien tome alguna de estas combinaciones para apostar, pensando que va a ganar.
+    No podemos dar garantías de ningún tipo, hacemos esto solo por un motivo de análisis e investigación en probabilidad, no para que alguien lo use para apostar,
+    y menos si es para responsabilizarnos por su mal uso.
+    Aclarado lo anterior, puede usarlo a su propio riesgo y criterio, es su responsabilidad, no la nuestra en qué usa nuestro experimento.
+  </p>
+  </div>
+
+
+<div class="text-center">
+
+    <form method="post" action="{{ url_for('generar_combinaciones_route') }}">
+        <div class="mb-5 mt-5">
+          <label class="form-label" for="seleccionar-sorteo">Seleccione la cantidad de números que desea</label>
+          <select class="form-select" aria-label="Default select example" id="seleccionar-sorteo" name="seleccionar-sorteo">
+            <option value="3" selected>3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+          </select>
+        </div>
+        <div class="text-center">
+        <button type="submit" class="btn btn-primary mb-5 rounded-5">Ver Números!</button>
+      </div>
+      </form>
+      
+      <div class="mb-5">
+        <textarea type="text" class="form-control" id="sorteo-generado" aria-describedby="sorteoHelp">{{ sorteo_generado }}</textarea>
+      </div>
+
+</div>
+
+{% endblock %}

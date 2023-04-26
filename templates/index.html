@@ -1,0 +1,50 @@
+{% extends 'layout.html' %} 
+
+{% block content %}
+
+<div class="text-center mt-5 mb-5 p-4">
+  <h1>Bienvenidos a Tombolator!</h1>
+  <h5>¿Qué nombre más tonto verdad?</h5>
+  <p class="mt-3">
+    Nuestra intención es que no te tomes en serio nada de lo que aparece en esta
+    página, ya que como indica el título de la misma, se hace referencia a un
+    juego de azar tradicional uruguayo, el cual no tenemos la intención de
+    promocionar en forma alguna.
+  </p>
+  <p>
+    Sin embargo, a pesar de que no fomentamos el juego de azar, ni queremos en
+    forma alguna ser responsabilizados por el potencial mal uso irresponsable,
+    por parte de personas que quieran usar nuestros servicios de analítica de
+    datos para otros fines que no sean simpelmente la investigación o la
+    diversión, es que debemos advertir sobre esto mismo.
+  </p>
+  <p>
+    Si usted tiene problemas con el juego y sufre por ejemplo, de ludopatía, le
+    sugerimos que no use nuestro sitio web y busque ayuda para solucionar su
+    dependencia sobre el juego. Dicho esto, también debemos aclarar que no somos
+    fuente de consulta profesional, ni experta en materia de juegos de azar,
+    como tampoco recomendamos a nadie a apostar en ningún tipo de juego de azar.
+    Por más que nuestros datos estén basados en sorteos reales, no podemos
+    garantizar que usted pueda ganar con los datos obtenidos aquí.
+  </p>
+</div>
+
+<div class="container mb-5">
+  <div class="bg-primary p-5 rounded-5 text-center">
+    <h3 class="mb-4">Conocer Combinaciones de Jugadas Repetidas</h3>
+    <p class="lead mb-4">Descripción de la acción</p>
+    <a class="btn btn-success rounded-5" href="{{ url_for('combinations_page') }}">Conocer Jugadas Repetidas!</a>
+  </div>
+
+  <div class="bg-primary p-5 rounded-5 text-center mt-5">
+    <h3 class="mb-4">Genera una jugada aleatoria</h3>
+    <p class="lead mb-4">
+      Presiona el botón y serás dirigido hacia un generador de potenciales
+      jugadas aletorias donde podrás elegir sorteos de 3 a 7 números sin
+      repetir.
+    </p>
+    <a class="btn btn-success rounded-5" href="{{ url_for('random_bet_page') }}">Generador de Jugadas!</a>
+  </div>
+</div>
+
+{% endblock %}

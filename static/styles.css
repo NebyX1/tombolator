@@ -1,0 +1,21 @@
+body {
+  background-color: darkslategrey;
+  color: white;
+}
+
+#mainpage {
+  min-height: 100vh;
+}
+
+textarea {
+  min-height: calc(40vh - 10px) !important;
+}
+
+#resultado-combinatoria {
+  min-height: 50px;
+  border-radius: 50px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
